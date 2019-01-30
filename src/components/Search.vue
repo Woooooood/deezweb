@@ -8,11 +8,11 @@
         <br>
         <label>Trier par: </label>
         <select v-model="searchBy">
-            <option value="ALBUM_DESC">Album</option>
-            <option value="ARTIST_DESC">Artiste</option>
-            <option value="TRACK_DESC">Musique</option>
-            <option value="RANKING_DESC">Les plus populaires</option>
-            <option  value="RATING_DESC">Les mieux notés</option>
+            <option value="ALBUM_ASC">Album</option>
+            <option value="ARTIST_ASC">Artiste</option>
+            <option value="TRACK_ASC">Musique</option>
+            <option value="RANKING_ASC">Les plus populaires</option>
+            <option  value="RATING_ASC">Les mieux notés</option>
         </select>
         <button type="submit">Go</button>
     </form>

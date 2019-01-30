@@ -11,7 +11,7 @@ const router = new VueRouter({
   routes: [
     // Configuration des routes de l'application
     { name: 'home', path: '/', component: Home },
-    {name: 'search', path: '/search', component: Search }
+    { name: 'search', path: '/search', component: Search }
   ]
 })
 
@@ -20,5 +20,5 @@ Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
-  router: router
+  router
 }).$mount('#app')

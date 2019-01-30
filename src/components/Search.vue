@@ -13,7 +13,7 @@
             <option value="TRACK_ASC">Musique</option>
             <option value="RANKING_ASC">Les plus populaires</option>
             <option  value="RATING_ASC">Les mieux notés</option>
-        </select>
+        </select><br>
         <button type="submit">Go</button>
     </form>
     <div v-if="song">
@@ -36,7 +36,7 @@ export default {
     data() {
         return {
             title : '',
-            searchBy : 'ALBUM_DESC',
+            searchBy : 'TRACK_ASC',
             song : null
         };
     },

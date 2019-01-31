@@ -3,6 +3,7 @@
     <div class="container">
       <router-link to="/">Accueil</router-link>
       <router-link to="/search">Search</router-link>
+      <router-link to="/favorite">Favorite</router-link>
     </div>
   </nav>
 </template>
@@ -20,8 +21,6 @@ export default {
     margin-bottom: 3em;
 }
 .navbar > .container {
-    display: flex;
-    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 }

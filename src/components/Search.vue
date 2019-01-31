@@ -19,10 +19,8 @@
     <div v-if="song">
         <MusicCard v-for="(item, index) in song.data" :key="index" :song="item"/>   
     </div>
-    <div v-if="song">
-        <div v-if="song.data.length == 0">
-            No results found ...
-        </div>
+    <div v-else>
+        No results found ...
     </div>
 
 </div>
@@ -46,7 +44,7 @@ export default {
     
     methods: {
         submit(){
-            MusicServices.search(this.title, this.searchBy, 9).then((song) => {
+            MusicServices.search(this.title, this.searchBy).then((song) => {
                 this.song = song
             });
         },

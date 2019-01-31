@@ -6,12 +6,14 @@ Vue.use(VueRouter)
 
 import Home from '@/components/Home.vue'
 import Search from '@/components/Search.vue'
+import Favorite from '@/components/Favorite.vue'
 
 const router = new VueRouter({
   routes: [
     // Configuration des routes de l'application
     { name: 'home', path: '/', component: Home },
-    { name: 'search', path: '/search', component: Search }
+    { name: 'search', path: '/search', component: Search },
+    { name: 'Favorite', path: '/favorite', component: Favorite}
   ]
 })
 

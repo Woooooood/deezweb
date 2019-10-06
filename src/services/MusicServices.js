@@ -1,17 +1,17 @@
-import fetchjsonp from 'fetch-jsonp'
+import axios from 'axios'
 
-const API_ENDPOINT = 'https://api.deezer.com/'
+const API_ENDPOINT = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/search'
 
 export default {
-  search(search, order) {
-    return fetchjsonp(`${API_ENDPOINT}search?q=${search}&order=${order}&output=jsonp`)
-      .then(res => res.json())
-      .then(res => {
-        if (res.error === 1) {
-            return Promise.reject(res)
-        } else {
-            return Promise.resolve(res)
-        }
-      })
-  }
+    fetchAll(q,order) {
+        return axios.get(`${API_ENDPOINT}/?q=${q}&order=${order}`)
+            .then(response => response.data)
+            .then(response => {
+                if (response.error === 1){
+                    return Promise.reject(response)
+                } else {
+                    return Promise.resolve(response)
+                }
+            })
+    }
 }

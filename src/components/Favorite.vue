@@ -1,34 +1,36 @@
 <template>
-<div>
-    <p>Fonctionnalité à venir !</p>
-    <h1>Mes favoris </h1> <br>
-    <p>Listes de mes favoris</p>
-    <div v-if="favsong">
-        <MusicCard v-for="(item, index) in song.data" :key="index" :song="item" />
-    </div>
-    <div v-else>
-        Aucun favoris dans votre liste ...
-    </div>
-
-</div>
-    
+  <div class="fav">
+   <h1>Mes favoris</h1>
+   <p>Liste de mes titres favoris</p> 
+   <hr/>
+   <div class="trackList" v-if="tracks.length != 0">
+    <MusicCard v-for="track in tracks" :track="track" :key="track.id"/>
+   </div>
+   <p v-else class="no-result">Aucun favoris dans votre liste ...</p>
+  </div>
 </template>
 
 <script>
-import MusicCard from '@/components/MusicCard.vue';
+import MusicCard from '@/components/MusicCard.vue'
 export default {
-    name : 'Favorite',
-    components : {
-        MusicCard,
-    },
-    data() {
-        return {
-            favsong : null,      
-        };
-    },
+  name: 'Fav',
+  components:{
+    MusicCard
+  },
+  data() {
+    return{
+      tracks: []
+    }
+  },
+  created(){
+    for(var track in window.localStorage){
+      if(JSON.parse(track.startsWith("track"))){
+        this.tracks.push(JSON.parse(window.localStorage[track]))
+      }
+    }
+  }
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
 </style>
